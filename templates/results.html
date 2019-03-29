@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Message Classification</title>	
+  </head>
+
+  <body>
+    <h3>Your message predicted for spam:</h3>
+    <div>{{ content }}</div>
+
+    <h3>Prediction:</h3>
+      
+    <div>This message is <strong>{{ prediction }}</strong>
+         (probability: {{ probability }}%).</div>
+
+    <div id='button'>
+          <form action="/bye" method="POST">
+                       <input type=hidden value='{{ prediction }}' name='prediction'>
+            <input type=hidden value='{{ content }}' name='message'>
+          </form>
+    </div>
+
+    <div id='button'>
+          <form action="/">
+            <input type=submit value='Check another message'>
+          </form>
+    </div>
+
+  </body>
+</html>
